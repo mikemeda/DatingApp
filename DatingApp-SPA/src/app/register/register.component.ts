@@ -21,7 +21,7 @@ model: any = {};
       console.log('reg successfull');
       this.cancle();
     }, error =>{
-      console.log('error registering');
+      console.log(error);
     });
   }
 
