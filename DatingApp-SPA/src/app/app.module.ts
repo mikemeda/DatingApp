@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpClientModule } from '@angular/common/http';
 import {FormsModule } from '@angular/forms';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 import { AppComponent } from './app.component';
 import { HttpClient } from 'selenium-webdriver/http';
@@ -13,23 +14,19 @@ import { RegisterComponent } from './register/register.component';
 import { ErrorInterseptorProvider } from './_services/error.interseptor';
 
 @NgModule({
-   declarations: [
-      AppComponent,
-      NavComponent,
-      HomeComponent,
-      RegisterComponent
-   ],
-   imports: [
-      BrowserModule,
-      HttpClientModule,
-      FormsModule
-   ],
-   providers: [
-      ErrorInterseptorProvider
-
-   ],
-   bootstrap: [
-      AppComponent
-   ]
+  declarations: [
+    AppComponent,
+    NavComponent,
+    HomeComponent,
+    RegisterComponent
+  ],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    FormsModule,
+    BsDropdownModule.forRoot()
+  ],
+  providers: [ErrorInterseptorProvider],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
