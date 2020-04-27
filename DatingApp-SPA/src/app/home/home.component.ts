@@ -17,11 +17,11 @@ constructor(private http: HttpClient) { }
   }
 
   registerToggle(){
-    this.registerMode= true;
+    this.registerMode = true;
   }
   
   cancleRegisterMode(registerMode: boolean){
-    this.registerMode=registerMode;
+    this.registerMode = registerMode;
   }
 
 }
