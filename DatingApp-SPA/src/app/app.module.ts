@@ -4,13 +4,14 @@ import { NgModule } from '@angular/core';
 import {HttpClientModule } from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { TabsModule } from 'ngx-bootstrap';
+import { TabsModule, PaginationModule } from 'ngx-bootstrap';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { RouterModule } from '@angular/router';
 import { JwtModule } from '@auth0/angular-jwt';
 import {NgxGalleryModule} from '@kolkov/ngx-gallery';
 import { FileUploadModule } from 'ng2-file-upload';
 import { TimeagoModule } from 'ngx-timeago';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
 
 //import { TimeAgoPipe } from 'time-ago-pipe';
 
@@ -38,6 +39,7 @@ import { MemberEditComponent } from './members/member-edit/member-edit.component
 import { MemberEditResolver } from './_resolvers/member-edit-resolver';
 import { PreventUnsavedCHanges } from './_guards/prevent-unsaved-changes.guard';
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
+import { ListsResolver } from './_resolvers/lists.resolver';
 
 
 
@@ -74,11 +76,13 @@ export function tokenGetter(){
     FormsModule,
     ReactiveFormsModule,
     TabsModule.forRoot(),
+    ButtonsModule.forRoot(),
     BsDropdownModule.forRoot(),
     BsDatepickerModule.forRoot(),
     RouterModule.forRoot(appRoutes),
     NgxGalleryModule,
     FileUploadModule,
+    PaginationModule.forRoot(),
     TimeagoModule.forRoot(),
     JwtModule.forRoot({
       config: {
@@ -98,6 +102,7 @@ export function tokenGetter(){
     MemberDetailResolver,
     MemberListResolver,
     MemberEditResolver,
+    ListsResolver,
     PreventUnsavedCHanges
    //{provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig}
   ],
